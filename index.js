@@ -1,27 +1,8 @@
-const randomMessages = [
-    "AAAAAAAAAAAAAAAAAAAAAAAAAAA",
-    "ERROR",
-    "Your body has a virus!",
-    "HELP!",
-    "Never gonna give you up. Never gonna let you down.",
-    "XD",
-    "Ummmmmmmmmmm something happened.",
-    "Your computer has a virus I think!",
-    "Can you help me pls",
-    "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE",
-    "OUCH",
-    "Can it be stopped?",
-    "It can't be stopped.",
-    "Someone help me.",
-    "Call tech support.",
-    "404",
-    "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "I think we are in danger.",
-    "Look behind you!",
-    "Think about your breathing.",
-    "What even is the purpose of this webpage",
-    "This is all your fault!"
-]
+let randomMessages
+
+fetch("errorMessages.json")
+    .then((response) => response.json())
+    .then((json) => randomMessages = json)
 
 function buttonPress(button) {
     const parent = button.parentNode;
@@ -75,7 +56,7 @@ function changePosition(popup) {
 }
 
 function playSound() {
-    const sound =  new Audio("Error_02.wav");
+    const sound = new Audio("sounds/Error_02.wav");
     sound.volume = 0.5;
     sound.play();
 }
