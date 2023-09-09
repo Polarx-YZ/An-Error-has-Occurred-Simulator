@@ -1,0 +1,51 @@
+body {
+    background-color: #FFFDD0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.error-popup,
+.initial-popup {
+    position: fixed;
+    background-color: white;
+    padding: 10px;
+    width: fit-content;
+    min-width: 300px;
+    border: lightblue solid 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px black;
+    animation: fadeinAnimation ease .2s;
+}
+
+@keyframes fadeinAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.error-popup button,
+.initial-popup button {
+    float: right;
+    display: inline;
+    border: lightblue solid 3px;
+    border-radius: 3px;
+}
+
+.error-popup button:hover,
+.initial-popup button:hover {
+    cursor: pointer;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+}
+
+.initial-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
